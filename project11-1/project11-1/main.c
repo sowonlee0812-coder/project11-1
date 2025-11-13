@@ -4,22 +4,18 @@
 
 int main(int argc, char * argv[])
 {
-    int i = 10;
-    char c = 'a';
-    int *iptr;
-    char *cptr;
-    int *iptr2;
+    int i = 300;
     
-    iptr = &i;
-    cptr = &c;
-    iptr2 = iptr;
-
+    int *pi = &i;
+    char *pc = &i;
     
-    printf("i: %p\n%p (size:%i)\n", iptr, &i, sizeof(iptr));
-    printf("c: %p\n%p (size:%i)\n", cptr, &c, sizeof(cptr));
-    printf("iptr2: %p, %i\n\n", iptr2, *iptr2);
+    printf("%i, %i, %i\n", i, *pi, *pc);
     
     system("PAUSE");
     return 0;
     
 }
+
+//300 넣으면 300,300,44
+//300을 넣었을 때 *pc에 44가 들어가는 이유는 300-44=256
+//0~255 표현가능
